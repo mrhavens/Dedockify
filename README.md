@@ -22,11 +22,11 @@ Note that the script only works against images that exist in your local image re
 
 Here's an example that shows the official Docker ruby image being pulled and the Dockerfile for that image being generated.
 
-    $ docker pull laniksj/dedockify
+    $ docker pull mrhavens/dedockify
     Using default tag: latest
     latest: Pulling from dedockify
 
-    $ alias dedockify="docker run -v /var/run/docker.sock:/var/run/docker.sock --rm laniksj/dedockify"
+    $ alias dedockify="docker run -v /var/run/docker.sock:/var/run/docker.sock --rm mrhavens/dedockify"
 
     $ dedockify <imageID>
     FROM buildpack-deps:latest
