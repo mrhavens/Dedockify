@@ -1,8 +1,8 @@
-# Dockerfile From Image (dfimage)
+# Dockerfile From Image (dedockify)
 
 Reverse-engineers a Dockerfile from a Docker image.
 
-See my [Inspiration](https://github.com/CenturyLinkLabs/dockerfile-from-image) and [Container Source](https://hub.docker.com/r/chenzj/dfimage/) for more information.
+See my [Inspiration](https://github.com/CenturyLinkLabs/dockerfile-from-image) and [Container Source](https://hub.docker.com/r/chenzj/dedockify/) for more information.
 
 Similar to how the `docker history` command works, the Python script is able to re-create the Dockerfile ([approximately](#limitations)) that was used to generate an image using the metadata that Docker stores alongside each image layer.
 
@@ -10,9 +10,9 @@ Similar to how the `docker history` command works, the Python script is able to 
 
 The Python script is itself packaged as a Docker image so it can easily be executed with the Docker _run_ command:
 
-    docker run -v /var/run/docker.sock:/var/run/docker.sock dfimage imageID
+    docker run -v /var/run/docker.sock:/var/run/docker.sock dedockify <imageID>
 
-The `imageID` parameter is the image ID (either the truncated form or the complete image ID).
+The `<imageID>` parameter is the image ID (either the truncated form or the complete image ID).
 
 Since the script interacts with the Docker API in order to query the metadata for the various image layers it needs access to the Docker API socket.  The `-v` flag shown above makes the Docker socket available inside the container running the script.
 
@@ -22,13 +22,13 @@ Note that the script only works against images that exist in your local image re
 
 Here's an example that shows the official Docker ruby image being pulled and the Dockerfile for that image being generated.
 
-    $ docker pull laniksj/dfimage
+    $ docker pull laniksj/dedockify
     Using default tag: latest
-    latest: Pulling from dfimage
+    latest: Pulling from dedockify
 
-    $ alias dfimage="docker run -v /var/run/docker.sock:/var/run/docker.sock --rm laniksj/dfimage"
+    $ alias dedockify="docker run -v /var/run/docker.sock:/var/run/docker.sock --rm laniksj/dedockify"
 
-    $ dfimage imageID
+    $ dedockify <imageID>
     FROM buildpack-deps:latest
     RUN useradd -g users user
     RUN apt-get update && apt-get install -y bison procps
