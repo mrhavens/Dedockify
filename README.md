@@ -53,7 +53,7 @@ Here's an example that shows an official Docker ruby image being pulled and the 
     ONBUILD RUN [ ! -e Gemfile ] || bundle install --system
 
 <div align="center">
-        <img width="650" src="images/container-to-dockerfile.svg">
+        <img width="850" src="images/container-to-dockerfile.svg">
 </div>
 
 ## How Does It Work?
