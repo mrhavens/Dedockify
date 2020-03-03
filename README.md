@@ -1,16 +1,13 @@
+
 # Dedockify
 
 <div align="center">
 	<img width="650" src="images/dedockify-logo2.png">
 </div>
 
-Reverse-engineers a Dockerfile from a Docker image.
+## TL;DR
 
-Similar to how the `docker history` command works, the Python script is able to re-create the Dockerfile ([approximately](#limitations)) that was used to generate an image using the metadata that Docker stores alongside each image layer.
-
-<div align="center">
-        <img width="650" src="images/container-to-dockerfile.svg">
-</div>
+Similar to how the `docker history` command works, Dedockify is able to re-create the Dockerfile ([approximately](#limitations)) that was used to generate an image using the metadata that Docker stores alongside each image layer.
 
 ## Usage
 
@@ -54,6 +51,10 @@ Here's an example that shows an official Docker ruby image being pulled and the 
     ONBUILD ADD . /usr/src/app
     ONBUILD WORKDIR /usr/src/app
     ONBUILD RUN [ ! -e Gemfile ] || bundle install --system
+
+<div align="center">
+        <img width="650" src="images/container-to-dockerfile.svg">
+</div>
 
 ## How Does It Work?
 
