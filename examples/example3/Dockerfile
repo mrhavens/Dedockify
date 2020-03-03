@@ -1,8 +1,12 @@
+# My New Dockerfile
+
 FROM alpine:3.9.2
 RUN apk add --no-cache nasm
 WORKDIR /app
 COPY hello.s /app/hello.s
-RUN touch testfile && nasm -f bin -o hello hello.s && chmod +x hello
+RUN touch testfile && \
+	nasm -f bin -o hello hello.s && \
+	chmod +x hello
 
 FROM scratch
 WORKDIR /testdir1

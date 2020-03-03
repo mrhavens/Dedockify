@@ -1,5 +1,9 @@
 # Dockerfile From Image (dedockify)
 
+<div align="center">
+	<img width="450" src="images/dedockify-logo2.png">
+</div>
+
 Reverse-engineers a Dockerfile from a Docker image.
 
 Similar to how the `docker history` command works, the Python script is able to re-create the Dockerfile ([approximately](#limitations)) that was used to generate an image using the metadata that Docker stores alongside each image layer.
