@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 
 from sys import argv
-from docker import Client
-
+import docker
 
 class ImageNotFound(Exception):
     pass
@@ -12,7 +11,7 @@ class MainObj:
     def __init__(self):
         super(MainObj, self).__init__()
         self.commands = []
-        self.cli = Client(base_url='unix://var/run/docker.sock')
+        self.cli = docker.APIClient(base_url='unix://var/run/docker.sock')
         self._get_image(argv[-1])
         self.hist = self.cli.history(self.img['RepoTags'][0])
         self._parse_history()
