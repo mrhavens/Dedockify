@@ -1,7 +1,7 @@
 # Dockerfile From Image (dedockify)
 
 <div align="center">
-	<img width="450" src="images/dedockify-logo2.png">
+	<img width="650" src="images/dedockify-logo2.png">
 </div>
 
 Reverse-engineers a Dockerfile from a Docker image.
