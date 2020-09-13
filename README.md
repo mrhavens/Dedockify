@@ -1,4 +1,4 @@
-[[Original Article](https://havdevops.com/Reverse-Engineer-Docker-Images-into-Dockerfiles)]—[[Article](https://appfleet.com/blog/reverse-engineer-docker-images-into-dockerfiles-with-dedockify) Published by [appfleet](https://appfleet.com)]—[Cross-Posted by [appfleet](https://appfleet.com) to [DZone](https://dzone.com/articles/reverse-engineer-docker-images-into-dockerfiles)]
+[See [original article](https://appfleet.com/blog/reverse-engineer-docker-images-into-dockerfiles-with-dedockify) published by [appfleet](https://appfleet.com)]—[Cross-posted by [appfleet](https://appfleet.com) to [DZone](https://dzone.com/articles/reverse-engineer-docker-images-into-dockerfiles)]—[Also see [author's version](https://havdevops.com/Reverse-Engineer-Docker-Images-into-Dockerfiles) at his [website](https://havdevops.com)]
 
 # Dedockify
 
